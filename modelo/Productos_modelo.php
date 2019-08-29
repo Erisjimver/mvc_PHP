@@ -7,7 +7,7 @@ class Productos_modelo{
 
 	public function __construct(){
 
-		require_once("Conectar.php");
+		require_once("modelo/Conectar.php");
 
 		$this->db=Conectar::conexion();
 
@@ -17,13 +17,15 @@ class Productos_modelo{
 
 	public function get_productos(){
 
-		$consulta=$this->db->query("select * from productos");
+		$consulta=$this->db->query("select nombreartículo from productos");
 
 		while($fila=$consulta->fetch(PDO::FETCH_ASSOC)){
 
 			$this->productos[]=$fila;
 
 		}
+
+		return $this->productos;
 	}
 
 
