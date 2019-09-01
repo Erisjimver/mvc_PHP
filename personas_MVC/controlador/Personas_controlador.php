@@ -1,13 +1,13 @@
 <?php 
 
-require_once("modelo/Productos_modelo.php");
+require_once("modelo/Personas_modelo.php");
 
-$producto=new Productos_modelo();
+$personas=new Personas_modelo();
 
-$matrizProductos=$producto->get_productos();
+$matrizPersonas=$personas->get_personas();
 
 
-require_once("vista/Productos_view.php");
+require_once("vista/Personas_view.php");
 
 
 

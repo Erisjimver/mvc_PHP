@@ -11,11 +11,11 @@ h1{
 	</style>
 </head>
 <body>
-<h1>MODELO, VISTA, COMNTROLADOR</h1>
+<h1>MODELO, VISTA, CONTROLADOR</h1>
 
 <?php 
 
-require_once("controlador/Productos_controlador.php");
+require_once("controlador/Personas_controlador.php");
  ?>
 
 </body>

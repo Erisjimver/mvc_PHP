@@ -1,9 +1,9 @@
 <?php 
 
-class Productos_modelo{
+class Personas_modelo{
 
 	private $db;
-	private $propductos;
+	private $personas;
 
 	public function __construct(){
 
@@ -11,21 +11,21 @@ class Productos_modelo{
 
 		$this->db=Conectar::conexion();
 
-		$this->productos=array();
+		$this->personas=array();
 
 	}
 
-	public function get_productos(){
+	public function get_personas(){
 
-		$consulta=$this->db->query("select nombreartículo from productos");
+		$consulta=$this->db->query("select * from datos_usuarios");
 
 		while($fila=$consulta->fetch(PDO::FETCH_ASSOC)){
 
-			$this->productos[]=$fila;
+			$this->personas[]=$fila;
 
 		}
 
-		return $this->productos;
+		return $this->personas;
 	}
 
 
