@@ -12,6 +12,7 @@
 <?php 
 
   include("Conectar.php");
+  $base=Conectar::conexion();
 
   if(!isset($_POST["bot_actualizar"])){
 
@@ -32,7 +33,7 @@ else{
   $resultado=$base->prepare($sql);
   $resultado->execute(array(":miId"=>$id, ":miNom"=>$nombre, ":miApe"=>$apellido, ":miDir"=>$direccion));
 
-  header("Location:index.php");
+  header("location:index.php");
 
 }
 

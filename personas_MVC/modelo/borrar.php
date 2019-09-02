@@ -9,7 +9,7 @@
 	<?php 
 
 	include("Conectar.php");
-
+	$base=Conectar::conexion();
 	$id=$_GET["id"];
 
 	$base->query("delete from datos_usuarios where id='$id'");
