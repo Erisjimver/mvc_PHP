@@ -7,14 +7,26 @@
 
 
 	<?php 
+		include("Conectar.php");
+		$base=Conectar::conexion();
 
-	include("Conectar.php");
-	$base=Conectar::conexion();
-	$id=$_GET["id"];
 
-	$base->query("delete from datos_usuarios where id='$id'");
+		try {
+			
+			$id=$_GET["id"];
 
-	header("Location:index.php");
+			$base->query("delete from datos_usuarios where id='$id'");
+
+
+			//header("Location:index.php");	
+			 header("location: http://localhost/mvc_PHP/personas_MVC/index.php");
+		} catch (Exception $e) {
+
+			die("Error: " . $e->getMessage());
+			
+		}
+
+
 
 	 ?>
 

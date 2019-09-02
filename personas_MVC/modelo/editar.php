@@ -14,7 +14,9 @@
   include("Conectar.php");
   $base=Conectar::conexion();
 
-  if(!isset($_POST["bot_actualizar"])){
+ try {
+   
+    if(!isset($_POST["bot_actualizar"])){
 
   $id=$_GET["id"];
   $nombre=$_GET["nom"];
@@ -33,9 +35,14 @@ else{
   $resultado=$base->prepare($sql);
   $resultado->execute(array(":miId"=>$id, ":miNom"=>$nombre, ":miApe"=>$apellido, ":miDir"=>$direccion));
 
-  header("location:index.php");
+//header("Location:index.php");
+  header("location: http://localhost/mvc_PHP/personas_MVC/index.php");
 
 }
+
+ } catch (Exception $e) {
+   die("Error: " . $e->getMessage());
+ }
 
 
 
