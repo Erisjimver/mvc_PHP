@@ -16,8 +16,8 @@ class Personas_modelo{
 	}
 
 	public function get_personas(){
-
-		$consulta=$this->db->query("select * from datos_usuarios");
+		require("paginacion.php");
+		$consulta=$this->db->query("select id,nombre,apellido,direccion from datos_usuarios limit $empezar_desde,$tamaño_paginas");
 
 		while($fila=$consulta->fetch(PDO::FETCH_ASSOC)){
 
